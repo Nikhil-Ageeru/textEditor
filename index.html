@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Text - Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- icon pack -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script>
+         function changeSize(){
+            var size= document.getElementById("fontSize").value;
+            var text=document.getElementById("textInput");
+            text.style.fontSize=size+"px";
+         }
+         function changeColor(){
+            var text=document.getElementById("textInput");
+            var colorValue=document.getElementById("pickColor").value;
+            text.style.color=colorValue;
+        }
+        function convertBold(){
+            var text=document.getElementById("textInput");
+            text.style.fontWeight="bold";
+            text.style.fontStyle="normal";
+            text.style.textDecoration="none";
+            text.style.textDecoration="none";
+
+        }
+        function changeItalic(){
+            var text=document.getElementById("textInput");
+            text.style.fontWeight="normal";
+            text.style.fontStyle="italic";
+            text.style.textDecoratioita="none";
+            text.style.textDecoration="none";
+        }
+        function changeStrike(){
+            var text=document.getElementById("textInput");
+            text.style.fontWeight="normal";
+            text.style.fontStyle="normal";
+            text.style.textDecoration="line-through";
+        }
+        function changeUl(){
+            var text=document.getElementById("textInput");
+            text.style.fontWeight="normal";
+            text.style.fontStyle="normal";
+            text.style.textDecoration="underline";
+        }
+        function alignCenter(){
+            var text=document.getElementById("textInput");
+            text.style.textAlign="center";
+        }
+        function alignLeft(){
+            var text=document.getElementById("textInput");
+            text.style.textAlign="left";
+        }
+        function alignRight(){
+            var text=document.getElementById("textInput");
+            text.style.textAlign="right";
+        }
+
+        
+        
+         
+    </script>
+</head>
+<body>
+    
+    <div class="row text-center bg-secondary">
+        <!-- col-1 -->
+        <div class="col-sm-6 col-lg-3 px-5 my-3">
+           <div class="fs-3 fw-bold"> font size</div>
+            <input class="form-range mt-2" min="10" max="150" value="16" id="fontSize" onchange="changeSize()" type="range">
+        </div>
+           <!-- col-2 -->
+        <div class="col-sm-6 col-lg-3 px-5 my-3 ">
+            <div class="fs-3 fw-bold">color</div>
+            <input type="color" class="form-control-color w-50 rounded" name="pickColor" onchange="changeColor()" id="pickColor" value="#000000">
+
+        </div>
+           <!-- col-3-->
+        <div class="col-sm-6 col-lg-3 px-5 my-3 ">
+            <div class="fs-3 fw-bold">font style</div>
+            <div class="dropdown ">
+                <button class="dropdown-toggle rounded w-75" data-bs-toggle="dropdown" data-bs-target="#menu">select-style</button>
+                <ul class="dropdown-menu" id="menu" data-bs-theme="dark">
+                    <li class="dropdown-item" onclick="convertBold()">bold</li>
+                    <li class="dropdown-item" onclick="changeItalic()"><i>italic</i></li>
+                    <li class="dropdown-item" onclick="changeStrike()"><del>strike</del></li>
+                    <li class="dropdown-item" onclick="changeUl()"><u>underline</u></li>
+                </ul>
+            </div>
+        </div>
+           <!-- col-4 -->
+        <div class="col-sm-6 col-lg-3 px-5 my-3 ">
+            <div class="fs-3 fw-bold">text-align</div>
+            <div class="input-group ">
+                <button onclick="alignLeft()" class="form-control w-25 bg-light"><span class="bi-text-left"></span></button>
+                <button onclick="alignCenter()" class="form-control w-25"><span class="bi-justify"></span></button>
+                <button onclick="alignRight()" class="form-control w-25"><span class="bi-text-right"></span></button>
+            </div>
+        </div>
+    </div>
+    <textarea id="textInput"   class="w-100" rows="20" placeholder="enter text here :"></textarea>
+
+    
+</body>
+</html>
